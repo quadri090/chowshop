@@ -6,7 +6,6 @@ import ff from '../assets/fast-food 1.png'
 import hf from '../assets/healthy-food 1.png'
 import drinks from '../assets/mai-thai 1.png'
 import fork from '../assets/fork 1.png'
-import { Link } from 'react-router-dom'
 
 export default function HomeMenu() {
   return (
@@ -34,7 +33,7 @@ export default function HomeMenu() {
                     head='Fast food'
                     desc='All sorrows are less with bread.'
                 />
-                
+
                 <div onClick={ () => {alert('Coming Soon')}}>
                     <Interests
                         src={hf}

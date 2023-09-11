@@ -1,7 +1,7 @@
 import React from 'react'
 import ServeSteps from './ServeSteps'
 import map1 from '../assets/Map1.png'
-import Fast from '../assets/fast food.png'
+import Fast from '../assets/Fast food.png'
 import scooter from '../assets/Scooter.png'
 
 
