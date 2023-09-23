@@ -16,6 +16,8 @@ const getDefaultCart = () => {
 export default function HomeContextProvider(props) {
   
   const [cartItems, setCartItems] = useState(getDefaultCart());
+  const [location, setLocation] = useState("");
+  const [addressClick , setAddressClick] = useState(false);
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
@@ -68,9 +70,28 @@ export default function HomeContextProvider(props) {
     return element.id * 0})]}))
   }
 
+  const addressInputOpen = () => {
+    setAddressClick(true)
+  };
+
+  const addressInputClose = () => {
+    setAddressClick(false)
+  }
 
 
-  const contextValue = {cartItems, getTotalCartAmount, addToCart, removeFromCart, clearItem, clearAllItems, getTotalItemsCount}
+
+  const contextValue = {
+    cartItems, 
+    getTotalCartAmount, 
+    addToCart, 
+    removeFromCart, 
+    clearItem, 
+    clearAllItems, 
+    getTotalItemsCount,
+    addressInputOpen,
+    addressInputClose,
+    addressClick
+  }
 
 
   return (

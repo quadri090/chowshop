@@ -21,11 +21,11 @@ export default function Header() {
                 </li>
             </Link>
             <li className='text-primary-grey'>
-                <a href="#login">Login</a>
+                <a href="#login" onClick={ () => {alert('Coming Soon')}}>Login</a>
 
             </li>
             <li className='w-[74px] sm:w-[92px] h-[32px] sm:h-[40px] flex items-center justify-center rounded-[5px] text-primary-red font-medium border border-primary-red'>
-                <a href="#signup">Sign Up</a>
+                <a href="#signup" onClick={ () => {alert('Coming Soon')}}>Sign Up</a>
 
             </li>
         </ul>

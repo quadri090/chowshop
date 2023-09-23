@@ -7,8 +7,6 @@ export default function Products(props) {
     const {addToCart, cartItems} = useContext(HomeContext)
     const cartItemCount = cartItems[id];
 
-    
-
   return (
     <div className='font-Poppins text-base font-semibold'>
         <div className='w-[320px] sm:w-[266px] h-[150px] mt-[35px]'>
