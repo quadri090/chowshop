@@ -18,6 +18,7 @@ export default function HomeContextProvider(props) {
   const [cartItems, setCartItems] = useState(getDefaultCart());
   const [location, setLocation] = useState("");
   const [addressClick , setAddressClick] = useState(false);
+  const [visibility, setVisibility] = useState(true);
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
@@ -52,8 +53,6 @@ export default function HomeContextProvider(props) {
   const clearItem = (itemId) => {
     setCartItems((prev) => ({...prev, [itemId]: prev[itemId] * 0}))
     }
-
-
     
   const clearAllItems = (itemId) => {
     let cleared;
@@ -78,6 +77,14 @@ export default function HomeContextProvider(props) {
     setAddressClick(false)
   }
 
+  const isVisible = () => {
+    setVisibility(true)
+  }
+
+  const isNotVisible = () => {
+    setVisibility(!visibility)
+  }
+
 
 
   const contextValue = {
@@ -90,7 +97,10 @@ export default function HomeContextProvider(props) {
     getTotalItemsCount,
     addressInputOpen,
     addressInputClose,
-    addressClick
+    addressClick,
+    isVisible,
+    isNotVisible,
+    visibility
   }
 
 

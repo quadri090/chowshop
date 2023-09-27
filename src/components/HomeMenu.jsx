@@ -23,7 +23,9 @@ export default function HomeMenu() {
         <div className='mt-[31px] lg:mt-[80px]' onMouseLeave={() => addressInputClose()}>
             <p className='text-[12px] sm:text-[16px] lg:text-[20px] font-medium text-black '>Where are you?</p>
             <div className='flex justify-between items-center w-full border-[1px] mt-[10px] rounded-[5px]'>
+
                 <input className='text-[12px] font-normal w-full h-[40px] lg:h-[60px] p-[10px]  sm:text-base lg:text-[20px] outline-none' placeholder='Enter your delivery address' id="inputAddress" onClick={() => addressInputOpen()}/>
+                
                 <i className={`${addressClick ? 'hidden' : 'block'} fa fa-chevron-down text-primary-red px-[8px] lg:px-[20px] w-auto`}></i>
                 <i className={`${addressClick ? 'block' : 'hidden'} fa fa-chevron-up text-primary-red px-[8px] lg:px-[20px] w-auto`}></i>
             </div>
