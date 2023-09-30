@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { HomeContext } from '../context/HomeContext'
 
 export default function Header() {
-    const { visibility, isNotVisible } = useContext(HomeContext)
+    const { visibility, isVisible } = useContext(HomeContext)
 
   return (
     <div className='w-screen fixed top-0 h-[48px] sm:h-[60px] px-[20px] sm:px-[40px] lg:px-[100px] mb-[22px] lg:mb-[42px] flex justify-between items-center bg-white text-[12px] sm:text-[16px] font-normal font-Poppins leading-normal'>
@@ -20,11 +20,11 @@ export default function Header() {
                 </li>
             </Link>
             
-            <li className={`${visibility ? 'block' : 'hidden'} w-[74px] sm:w-[92px] h-[32px] sm:h-[40px] flex items-center justify-center rounded-[5px] text-primary-red font-medium border border-primary-red`} onClick={ () => {isNotVisible()}}>
+            <li className={` w-[74px] sm:w-[92px] h-[32px] sm:h-[40px] flex items-center justify-center rounded-[5px] text-primary-red font-medium border border-primary-red`} onClick={ () => {isVisible()}}>
 
-                <Link to='/LogIn'>
+                {/* <Link to={visibility && '/LogIn'}> */}
                     <button >Log In</button>
-                </Link>
+                {/* </Link> */}
 
             </li>
         </ul>

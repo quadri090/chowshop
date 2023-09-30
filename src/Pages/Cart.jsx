@@ -53,7 +53,7 @@ export default function Cart() {
     }
 
   return (
-    <div className="mt-[80px] mx-[20px] lg:mx-[100px] font-Poppins">
+    <div className="mt-[80px] mx-[20px] sm:mx-[30px] lg:mx-[100px] font-Poppins">
         <ShopNav
             width='w-[88px]'
             displayVerification='hidden'

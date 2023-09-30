@@ -29,7 +29,7 @@ export default function Vendors() {
         imgProps='w-[30px] h-[30px]'
         text='KFC'
       />
-      <div className=' flex flex-col sm:flex-row justify-between items-center'>
+      <div className=' flex flex-col gap-[20px] sm:flex-row justify-between items-center'>
       {ITEMS.map((item) => {
             if (item.id <= 3) {
               return <Products data={item} />
@@ -38,7 +38,7 @@ export default function Vendors() {
       </div>
       <div className='w-full flex justify-center mt-[55px] mb-[29px]'>
 
-        <button className='text-primary-red font-medium text-base'>View all</button>
+        <button className='text-primary-red font-medium text-base' onClick={ ()=> {alert('Products shipping soon')}}>View all</button>
       </div>
 
       <div className='border-b w-full'></div>
@@ -60,7 +60,7 @@ export default function Vendors() {
       </div>
       <div className='w-full flex justify-center mt-[55px] mb-[29px]'>
 
-        <button className='text-primary-red font-medium text-base'>View all</button>
+        <button className='text-primary-red font-medium text-base' onClick={ ()=> {alert('Dang! you sure love a good treat :)')}}>View all</button>
       </div>
     </div>
   )

@@ -18,7 +18,7 @@ export default function HomeContextProvider(props) {
   const [cartItems, setCartItems] = useState(getDefaultCart());
   const [location, setLocation] = useState("");
   const [addressClick , setAddressClick] = useState(false);
-  const [visibility, setVisibility] = useState(true);
+  const [visibility, setVisibility] = useState(false);
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;

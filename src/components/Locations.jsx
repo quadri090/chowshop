@@ -7,7 +7,6 @@ export default function Locations(props) {
     const {addressInputClose} = useContext(HomeContext);
     const {id, streetName} = props.data;
     const inputVal = document.getElementById('streetInput');
-    // console.log(inputVal.innerHTML)
     
   return (
     <div className='' onClick={() => addressInputClose()}>

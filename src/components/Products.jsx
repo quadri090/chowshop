@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { HomeContext } from '../context/HomeContext.jsx';
+import { Link } from 'react-router-dom';
 
 export default function Products(props) {
 
@@ -13,14 +14,19 @@ export default function Products(props) {
             <img src={itemImage} alt="" />
         </div>
         <div className='flex justify-between mt-[15px]'>
-            <p>{itemName}</p>
+            <p className='text-primary-light-grey'>{itemName}</p>
             <p className='text-primary-red'>#{price.toLocaleString("en-US")}</p>
         </div>
-        <div>
-            <button className='w-[138px] h-[40px] mt-[15px] font-medium text-primary-red border-[1px] border-primary-red rounded-[3px]' onClick={() => addToCart(id)}>
+        <div className='flex justify-between mt-[15px]'>
+            <button className='w-[100px] sm:w-[138px] text-[12px] sm:text-[16px] h-[40px] font-semibold text-primary-red border-[1px] border-primary-red rounded-[6px]' onClick={() => addToCart(id)}>
                 Add to cart  {cartItemCount > 0 && <> ({cartItemCount})</>}
-                </button>
+            </button>
+            
         </div>
+        <Link to='/Cart'>
+                {cartItemCount > 0 && <button className='fixed bottom-[20px] left-[40px] right-[40px] sm:w-[138px] text-[14px] sm:text-[16px] h-[40px] font-semibold text-white bg-primary-light-grey border-[1px] rounded-[6px]' >View Cart</button>}
+                
+            </Link>
     </div>
   )
 }
