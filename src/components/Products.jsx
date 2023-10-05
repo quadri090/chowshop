@@ -24,9 +24,8 @@ export default function Products(props) {
             
         </div>
         <Link to='/Cart'>
-                {cartItemCount > 0 && <button className='fixed bottom-[20px] left-[40px] right-[40px] sm:w-[138px] text-[14px] sm:text-[16px] h-[40px] font-semibold text-white bg-primary-light-grey border-[1px] rounded-[6px]' >View Cart</button>}
-                
-            </Link>
+            {cartItemCount > 0 && <button className='fixed bottom-[20px] left-auto right-auto w-[320px] sm:w-[138px] text-[14px] sm:text-[16px] h-[50px] sm:h-[60px] font-semibold text-white bg-primary-red border-[1px] rounded-[6px]' >View Cart Items</button>}
+        </Link>
     </div>
   )
 }

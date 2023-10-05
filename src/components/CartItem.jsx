@@ -21,7 +21,7 @@ export default function CartItems(props) {
                 <div className='h-[46px] md:h-[75px] flex justify-between font-Poppins mt-[20px]'>
                     <div className='flex gap-[14px] w-[210px] md:w-[350px]'>
                         <button className='my-auto' onClick={() => clearItem(id)}>
-                            <i class="fa fa-trash" aria-hidden="true"></i>
+                            <i className="fa fa-trash" aria-hidden="true"></i>
                             {/* <img src="/src/assets/close.png" alt="" className='hidden'/> */}
                         </button>
                         <div className='w-[57px] md:w-[133px] h-[46px] md:h-[75px] border'>

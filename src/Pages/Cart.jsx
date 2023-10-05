@@ -7,14 +7,6 @@ import Btn from '../components/Btn.jsx'
 
 
 export default function Cart() {
-    const clearAll = () => {
-        for (const item in cartItems) {
-          if (cartItems[item] > 0) {
-            let itemInfo = cartItems[item];
-            return itemInfo;
-          }
-        }
-      };
 
     const { cartItems, getTotalCartAmount, clearAllItems, getTotalItemsCount} = useContext(HomeContext);
     const totalAmount = getTotalCartAmount();

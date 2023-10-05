@@ -54,20 +54,20 @@ export default function HomeContextProvider(props) {
     setCartItems((prev) => ({...prev, [itemId]: prev[itemId] * 0}))
     }
     
+
+
+//not working yet
+
   const clearAllItems = (itemId) => {
-    let cleared;
-    const clear = itemId
-    for (const item in cartItems) {
-      if (cartItems[item] > 0) {
-        // console.log(clear)
-        cleared = [cartItems];
-        // console.log(cleared)
-      }
-    }
-    setCartItems((prev) => ({...prev, [itemId]: prev[cleared.map((element) => {
-      console.log(element)
-    return element.id * 0})]}))
+        console.log(itemId)
+   
+    setCartItems((prev) => ({...prev, [item]: prev[item] * 0}))
   }
+
+
+
+
+
 
   const addressInputOpen = () => {
     setAddressClick(true)

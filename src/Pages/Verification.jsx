@@ -22,7 +22,7 @@ export default function Verification() {
         customer: {
           email: 'user@gmail.com',
           phone_number: '070********',
-          name: 'john doe',
+          name: 'John Doe',
         },
         customizations: {
           title: 'my Payment Title',
@@ -32,6 +32,13 @@ export default function Verification() {
       };
     
       const handleFlutterPayment = useFlutterwave(config);
+
+      const succesfull = () => {
+        return <Btn 
+            routte='/OrderStatus'
+            myClasses='mt-[49px] mb-[33px] lg:mt-[60px]'  
+        />
+      }
 
   return (
     <div className='mx-[20px] lg:mx-[100px] mt-[80px] font-Poppins'>
@@ -49,9 +56,9 @@ export default function Verification() {
                 <p className='text-sm sm:text-base lg:text-[20px] font-medium'>Delivery Address</p>
                 <p className='text-[10px] sm:text-sm lg:text-[16px] font-normal text-primary-grey mt-[5px]'>Deliver to my registered address</p>
             </div>
-            <button className='flex items-center justify-center w-[20px] h-[20px] outline outline-[2px] outline-primary-red rounded-[12px]'  onClick={() => setRegisteredAddress(!RegisteredAddress)}>
+            <div className='flex items-center justify-center w-[20px] h-[20px] outline outline-[2px] outline-primary-red rounded-[12px]'  onClick={() => setRegisteredAddress(!RegisteredAddress)}>
                 <button className={`w-[14px] h-[14px] p-[3px] bg-primary-red rounded-[8px] ${RegisteredAddress ? "block" : "hidden"} `}></button>
-            </button>
+            </div>
         </div>
         <div className={`${RegisteredAddress ? 'hidden' : 'block'}`}>
 
@@ -72,13 +79,21 @@ export default function Verification() {
             placeholder='+234'
             inputprops='w-full'
         />
+        <InputArea
+            myProps='mt-[20px] lg:mt-[30px] w-full'
+            head='More Info'
+            type='text'
+            placeholder='Optional Info For Delivery Personnel'
+            inputprops='w-full'
+        />
+
         <div className='border-b-[1px] mt-[30px]'></div>
 
         <button onClick={() => {
                 handleFlutterPayment({
                   callback: (response) => {
                     if (response.status === 'completed') {
-                        
+
                     }
                      console.log(response);
                       closePaymentModal()
@@ -89,12 +104,7 @@ export default function Verification() {
                 });
               }}
               className='w-full sm:w-[500px] lg:w-[809px] h-[50px] sm:h-[60px] flex items-center justify-center  rounded-[5px] sm:mx-auto mt-[49px] mb-[33px] lg:mt-[60px] text-base font-semibold text-white bg-primary-red'>Proceed to Payment</button>
-        {/* <Btn 
-            routte='/OrderStatus'
-            text='Proceed to Payment'
-            myClasses='mt-[49px] mb-[33px] lg:mt-[60px]'
-            
-        /> */}
+        
     </div>
   )
 }

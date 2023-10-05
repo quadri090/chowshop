@@ -14,7 +14,7 @@ export default function ContactCard() {
         <div className='flex flex-col sm:flex-row justify-between items-center w-full'>
 
           <p className='mt-[34px] '>Terms & Conditions . Privacy Policy</p>
-          <p className='mt-[20px] w-[200px] sm:w-auto text-center'>© Copyright 2021 FoodBag is a registered trademark</p>
+          <p className='mt-[20px] w-[200px] sm:w-auto text-center'>©Copyright 2023. <span className='font-semibold'>chow<span className='text-primary-red'>Chow</span></span>  is a registered trademark</p>
         </div>
     </div>
   )
