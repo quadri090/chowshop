@@ -4,12 +4,13 @@ import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 import { HomeContext } from '../context/HomeContext.jsx'
 import ShopNav from '../components/ShopNav'
 import InputArea from '../components/InputArea';
-// import Btn from '../components/Btn';
+import { useNavigate } from 'react-router-dom';
 
 export default function Verification() {
 
     const [RegisteredAddress, setRegisteredAddress] = useState(true);
     const { getTotalCartAmount } = useContext(HomeContext);
+    const navigate = useNavigate();
     const payableAmount = getTotalCartAmount();
     const KEY = 'FLWPUBK_TEST-d0838725990649edd81198e11c5b468f-X';
 
@@ -19,6 +20,7 @@ export default function Verification() {
         amount: payableAmount,
         currency: 'NGN',
         payment_options: 'card,mobilemoney,ussd',
+        redirect_url: useNavigate(),
         customer: {
           email: 'user@gmail.com',
           phone_number: '070********',
@@ -32,13 +34,6 @@ export default function Verification() {
       };
     
       const handleFlutterPayment = useFlutterwave(config);
-
-      const succesfull = () => {
-        return <Btn 
-            routte='/OrderStatus'
-            myClasses='mt-[49px] mb-[33px] lg:mt-[60px]'  
-        />
-      }
 
   return (
     <div className='mx-[20px] lg:mx-[100px] mt-[80px] font-Poppins'>
@@ -93,13 +88,13 @@ export default function Verification() {
                 handleFlutterPayment({
                   callback: (response) => {
                     if (response.status === 'completed') {
-
                     }
-                     console.log(response);
-                      closePaymentModal()
+                    console.log(response);
+                    closePaymentModal()
+                    navigate('/')
                   },
                   onClose: () => {
-
+                    navigate('/OrderFailed')
                   },
                 });
               }}

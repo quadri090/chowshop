@@ -7,7 +7,8 @@ import KFC from './Pages/KFC.jsx'
 import ChickRep from './Pages/ChickRep.jsx'
 import Cart from './Pages/Cart.jsx'
 import Verification from './Pages/Verification.jsx'
-import OrderStatus from './Pages/OrderStatus.jsx'
+import OrderSuccessfull from './Pages/OrderSuccessfull.jsx'
+import OrderFailed from './Pages/OrderFailed'
 import HomeContextProvider from './context/HomeContext'
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/cart" element={<Cart/>} />
           <Route path="/verification" element={<Verification/>} />
-          <Route path="/OrderStatus" element={<OrderStatus/>} />
+          <Route path="/OrderSuccessfull" element={<OrderSuccessfull/>} />
+          <Route path="/OrderFailed" element={<OrderFailed/>} />
           <Route path="/Vendors" element={<Vendors/>} />
           <Route path="/LoginModal" element={<LoginModal/>} />
           <Route path="/KFC" element={<KFC/>} />

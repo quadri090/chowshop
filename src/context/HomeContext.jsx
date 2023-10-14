@@ -9,6 +9,7 @@ const getDefaultCart = () => {
   for (let i = 1; i < ITEMS.length + 1; i++) {
     cart[i] = 0
   }
+  // console.log(typeof(cart))
   return cart;
 }
 
@@ -53,21 +54,19 @@ export default function HomeContextProvider(props) {
   const clearItem = (itemId) => {
     setCartItems((prev) => ({...prev, [itemId]: prev[itemId] * 0}))
     }
-    
+  
+const clearCart = () => {
+  const zeroedState = {};
 
-
-//not working yet
-
-  const clearAllItems = (itemId) => {
-        console.log(itemId)
-   
-    setCartItems((prev) => ({...prev, [item]: prev[item] * 0}))
+  for (const item in cartItems) {
+    if (cartItems[item] > 0) {
+      zeroedState[item] = 0;
+    } else {
+      zeroedState[item] = cartItems[item];
+    }
   }
-
-
-
-
-
+  setCartItems(zeroedState)
+}
 
   const addressInputOpen = () => {
     setAddressClick(true)
@@ -93,7 +92,7 @@ export default function HomeContextProvider(props) {
     addToCart, 
     removeFromCart, 
     clearItem, 
-    clearAllItems, 
+    clearCart,
     getTotalItemsCount,
     addressInputOpen,
     addressInputClose,

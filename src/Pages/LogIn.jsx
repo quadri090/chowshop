@@ -8,23 +8,23 @@ export default function LogIn() {
     const {isNotVisible} = useContext(HomeContext);
 
   return (
-    <div className='sm:w-[500px] lg:w-[809px] sm:flex flex-col justify-center  my-[40px] lg:my-[80px] mx-[20px] sm:mx-auto font-Poppins'>
+    <div className='sm:w-[500px] lg:w-[90%] sm:flex flex-col justify-center  my-[40px] lg:my-[80px] mx-[20px] sm:mx-auto font-Poppins'>
         <div className='flex items-center justify-between'>
             <div>
                 <p className="text-[20px] font-medium">Sign In</p>
                 <p className='text-[12px] text-primary-very-light-grey'>Sign in to continue</p>
             </div>
             <Link to='/'>
-                <div className='w-[25px] h-[25px] flex items-center justify-center border shadow-myBoxShadow bg-[#fff] rounded-full text-primary-red'>
-                    <i className='fa fa-times text-[16px] font-extralight' onClick={ () => {isNotVisible()}}></i>
+                <div className='w-[25px] sm:w-[40px] h-[25px] sm:h-[40px] flex items-center justify-center border shadow-myBoxShadow bg-[#fff] rounded-full text-primary-red'>
+                    <i className='fa fa-times text-[16px] md:text-[24px] font-extralight' onClick={ () => {isNotVisible()}}></i>
                 </div>
             </Link>
         </div>
         
         <div>
-            <div className='w-full sm:w-[500px] lg:w-[809px] h-[50px] sm:h-[60px] mt-[40px] flex items-center justify-center gap-[15px] rounded-[5px] sm:mx-auto bg-black text-white text-[14px]' onClick={ ()=> {alert('shipping soon for devs')}}>
+            <div className='w-full sm:w-[500px] lg:w-full h-[50px] sm:h-[60px] mt-[40px] flex items-center justify-center gap-[15px] rounded-[5px] sm:mx-auto bg-black text-white text-[14px]' onClick={ ()=> {alert('shipping soon for devs')}}>
 
-                    <i className='fa fa-github fa-2x'></i>
+                <i className='fa fa-github fa-2x'></i>
                 <button className=''> Sign in with GitHub </button>
             </div>
 
