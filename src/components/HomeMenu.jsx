@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useContext } from 'react'
 import { HomeContext } from '../context/HomeContext'
 import Interests from './Interests'
@@ -12,12 +12,17 @@ import drinks from '../assets/mai-thai 1.png'
 import fork from '../assets/fork 1.png'
 import LoginModal from '../Pages/LoginModal'
 import LogIn from '../Pages/LogIn'
+import ffColored from '../assets/fast-food-colored.svg'
+import hfColored from '../assets/healthy-food-colored.svg'
+import mtColored from '../assets/mai-thai-colored.svg'
+import fkColored from '../assets/fork-colored.svg'
+
 
 export default function HomeMenu() {
     const {addressInputOpen,
             addressInputClose,
             addressClick,
-            visibility} = useContext(HomeContext);
+            visibility, location} = useContext(HomeContext);
 
   return (
     <>
@@ -36,12 +41,12 @@ export default function HomeMenu() {
                 <p className='text-[12px] sm:text-[16px] lg:text-[20px] font-medium text-black '>Where are you?</p>
                 <div className='flex justify-between items-center w-full border-[1px] mt-[10px] rounded-[5px]'>
 
-                    <input className='text-[12px] font-normal w-full h-[40px] lg:h-[60px] p-[10px]  sm:text-base lg:text-[20px] outline-none' placeholder='Enter your delivery address' id="inputAddress" onClick={() => addressInputOpen()}/>
+                    <input className='text-[12px] font-normal w-full h-[40px] lg:h-[60px] p-[10px]  sm:text-base lg:text-[20px] outline-none' placeholder='Select your delivery address'value={location} onClick={() => addressInputOpen()}/>
                     
                     <i className={`${addressClick ? 'hidden' : 'block'} fa fa-chevron-down text-primary-red px-[8px] lg:px-[20px] w-auto`}></i>
                     <i className={`${addressClick ? 'block' : 'hidden'} fa fa-chevron-up text-primary-red px-[8px] lg:px-[20px] w-auto`}></i>
                 </div>
-                <div className={`${addressClick ? 'block' : 'hidden'} flex flex-col gap-[10px] mt-[10px] w-full text-left`}>
+                <div className={`${addressClick ? 'block' : 'hidden'} flex flex-col gap-[12px] lg:gap-[16px] mt-[10px] py-[15px] w-full text-left sm:w-[300px] border rounded-lg shadow-2xl`}>
                     {STREETS.map((street) => {
                         return <Locations data={street} />
                     })}
@@ -54,15 +59,15 @@ export default function HomeMenu() {
                 <div className='flex flex-col sm:grid sm:grid-rows-2 sm:grid-cols-2 lg:flex lg:flex-row lg:justify-between mt-[10px] sm:mt-[20px] gap-[20px]'>
                     
                     <Interests
-                        routte='/Vendors'
-                        src={ff}
+                        routte={location !== '' ? '/Vendors' : ''}
+                        src={location !== '' ? ffColored : ff}
                         head='Fast food'
                         desc='All sorrows are less with bread.'
                     />
 
                     <div onClick={ () => {alert('Coming Soon')}}>
                         <Interests
-                            src={hf}
+                            src={location !== '' ? hfColored : hf}
                             head='Vegetables & Fruits'
                             desc='May not want it, but good for you.'
                         />
@@ -70,7 +75,7 @@ export default function HomeMenu() {
 
                     <div onClick={ () => {alert('Coming Soon')}}>
                         <Interests
-                            src={drinks}
+                            src={location !== '' ? mtColored : drinks}
                             head='Drinks & Cocktails'
                             desc="I feel sad for those who don't drink."
                         />
@@ -78,7 +83,7 @@ export default function HomeMenu() {
 
                     <div onClick={ () => {alert('Coming Soon')}}>
                         <Interests
-                            src={fork}
+                            src={location !== '' ? fkColored : fork}
                             head='Restaurants'
                             desc='All sorrows are less with bread.'
                         />

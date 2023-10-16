@@ -91,10 +91,9 @@ export default function Verification() {
                     }
                     console.log(response);
                     closePaymentModal()
-                    navigate('/')
                   },
                   onClose: () => {
-                    navigate('/OrderFailed')
+                    navigate('/OrderSuccessfull')
                   },
                 });
               }}

@@ -40,33 +40,33 @@ export default function HomeContextProvider(props) {
       }
     }
     return totalCount;
-    }
+  };
 
 
   const addToCart = (itemId) => {
     setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1}))
-  }
+  };
 
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1}))
-  }
+  };
 
   const clearItem = (itemId) => {
     setCartItems((prev) => ({...prev, [itemId]: prev[itemId] * 0}))
-    }
+  };
   
-const clearCart = () => {
-  const zeroedState = {};
+  const clearCart = () => {
+    const zeroedState = {};
 
-  for (const item in cartItems) {
-    if (cartItems[item] > 0) {
-      zeroedState[item] = 0;
-    } else {
-      zeroedState[item] = cartItems[item];
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        zeroedState[item] = 0;
+      } else {
+        zeroedState[item] = cartItems[item];
+      }
     }
-  }
-  setCartItems(zeroedState)
-}
+    setCartItems(zeroedState)
+  };
 
   const addressInputOpen = () => {
     setAddressClick(true)
@@ -74,15 +74,15 @@ const clearCart = () => {
 
   const addressInputClose = () => {
     setAddressClick(false)
-  }
+  };
 
   const isVisible = () => {
     setVisibility(true)
-  }
+  };
 
   const isNotVisible = () => {
     setVisibility(!visibility)
-  }
+  };
 
 
 
@@ -94,13 +94,15 @@ const clearCart = () => {
     clearItem, 
     clearCart,
     getTotalItemsCount,
+    addressClick,
     addressInputOpen,
     addressInputClose,
-    addressClick,
+    visibility,
     isVisible,
     isNotVisible,
-    visibility
-  }
+    location,
+    setLocation
+  };
 
 
   return (

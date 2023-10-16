@@ -27,5 +27,17 @@ export const STREETS = [
         id: 7,
         streetName: 'Ayesan'
     },
+    {
+        id: 8,
+        streetName: 'Molipa'
+    },
+    {
+        id: 9,
+        streetName: 'Erinlu'
+    },
+    {
+        id: 10,
+        streetName: 'Imosan'
+    },
 
 ]
