@@ -6,7 +6,7 @@ export default function Locations(props) {
     
     const {addressInputClose, location, setLocation} = useContext(HomeContext);
     const {id, streetName} = props.data;
-    console.log(location)
+    // console.log(location)
 
     const setStreetname = (streetName) => {
       setLocation(streetName)
