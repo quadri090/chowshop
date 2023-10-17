@@ -4,9 +4,8 @@ import { HomeContext } from '../context/HomeContext'
 
 export default function Locations(props) {
     
-    const {addressInputClose, location, setLocation} = useContext(HomeContext);
-    const {id, streetName} = props.data;
-    // console.log(location)
+    const {addressInputClose, setLocation} = useContext(HomeContext);
+    const {streetName} = props.data;
 
     const setStreetname = (streetName) => {
       setLocation(streetName)

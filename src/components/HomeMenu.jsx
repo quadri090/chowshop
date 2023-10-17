@@ -54,11 +54,12 @@ export default function HomeMenu() {
           <p className="text-[12px] sm:text-[16px] lg:text-[20px] font-medium text-black ">
             Where are you?
           </p>
-          <div className="flex justify-between items-center w-full border-[1px] mt-[10px] rounded-[5px]">
+          <div className="flex justify-between items-center w-full border mt-[10px] shadow-xl rounded-[10px] bg-white">
             <input
-              className="text-[12px] font-normal w-full h-[40px] lg:h-[60px] p-[10px]  sm:text-base lg:text-[20px] outline-none"
+              className="text-[13px] font-normal w-full h-[50px] lg:h-[60px] p-[10px] sm:text-base lg:text-[20px]   outline-none"
               placeholder="Select your delivery address"
               value={location}
+              onChange={(e) => e.currentTarget.value}
               onClick={() => addressInputOpen()}
             />
 
@@ -79,7 +80,7 @@ export default function HomeMenu() {
             } flex flex-col gap-[12px] lg:gap-[16px] mt-[10px] py-[15px] w-full text-left sm:w-[300px] border rounded-lg shadow-2xl`}
           >
             {STREETS.map((street) => {
-              return <Locations data={street} />;
+              return <Locations data={street} key={street.id}/>;
             })}
           </div>
         </div>

@@ -11,14 +11,12 @@ export default function Cart() {
     getTotalCartAmount,
     clearCart,
     getTotalItemsCount,
-    clearAllItems,
   } = useContext(HomeContext);
   const totalAmount = getTotalCartAmount();
   const totalItemCount = getTotalItemsCount();
   const ID = ITEMS.map((item) => {
     return cartItems[item.id];
   });
-  // console.log(ID)
 
   const checkOut = () => {
     let routte = "";
@@ -75,7 +73,7 @@ export default function Cart() {
       <div className="mt-[42px]">
         {ITEMS.map((item) => {
           if (cartItems[item.id] !== 0) {
-            return <CartItem data={item} />;
+            return <CartItem data={item} key={item.id}/>;
           }
         })}
       </div>

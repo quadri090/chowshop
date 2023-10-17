@@ -18,11 +18,10 @@ export default function KFC() {
         <div className=' flex flex-col gap-[20px] sm:mt-[40px] sm:grid sm:grid-cols-2 lg:flex lg:flex-row justify-between items-center'>
             {ITEMS.map((item) => {
                     if (item.id <= 3) {
-                    return <Products data={item} proClasses='p-4 sm:p-8 shadow-xl rounded-2xl border'/>
+                    return <Products data={item} key={item.id} proClasses='p-4 sm:p-8 shadow-xl rounded-2xl border'/>
                     }
                 })}  
         </div>
-        {/* <div className='border-b w-full mt-[40px]'></div> */}
         <ContactCard></ContactCard>
     </div>
   )

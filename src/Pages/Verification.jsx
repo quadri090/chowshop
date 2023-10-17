@@ -66,7 +66,7 @@ export default function Verification() {
             Delivery Address
           </p>
           <p className="text-[10px] sm:text-sm lg:text-[16px] font-normal text-primary-grey mt-[5px]">
-            Deliver to my selected address
+            Deliver to <span className="font-semibold text-[12px]">{location}</span> 
           </p>
         </div>
         <div
@@ -90,14 +90,14 @@ export default function Verification() {
           <p className="text-[12px] sm:text-[16px] lg:text-[20px] font-medium text-black ">
             Where are you?
           </p>
-          <div className="flex justify-between items-center w-full border-[1px] mt-[10px] rounded-[5px]">
+          <div className="flex justify-between items-center w-full border-[1px] mt-[10px] shadow-xl rounded-[5px]">
             <input
-              className="text-[12px] font-normal w-full h-[40px] lg:h-[60px] p-[10px]  sm:text-base lg:text-[20px] outline-none"
+              className="text-[13px] font-normal w-full h-[50px] lg:h-[60px] p-[10px] sm:text-base lg:text-[20px] outline-none"
               placeholder="Select your delivery address"
               value={location}
+              onChange={(e) => e.currentTarget.value}
               onClick={addressInputOpen}
             />
-            {console.log(location)}
             <i
               className={`${
                 addressClick ? "hidden" : "block"
@@ -115,14 +115,14 @@ export default function Verification() {
             } flex flex-col gap-[12px] lg:gap-[16px] mt-[10px] py-[15px] w-full text-left sm:w-[300px] border rounded-lg shadow-2xl`}
           >
             {STREETS.map((street) => {
-              return <Locations data={street} />;
+              return <Locations data={street} key={street.id} />;
             })}
           </div>
         </div>
       </div>
 
       <InputArea
-        myProps="mt-[30px] lg:mt-[30px] w-full"
+        myProps="mt-[30px] lg:mt-[30px] w-full shadow-xl"
         head="More Info"
         type="text"
         placeholder="Optional Info For Delivery Personnel"
@@ -130,7 +130,7 @@ export default function Verification() {
       />
 
       <InputArea
-        myProps="mt-[30px] lg:mt-[30px] w-full"
+        myProps="mt-[30px] lg:mt-[30px] w-full shadow-xl"
         head="Phone Number"
         type="tel"
         mnlength="10"

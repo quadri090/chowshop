@@ -8,7 +8,7 @@ export default function Interests(props) {
 
   return (
     <Link to={props.routte}>
-      <div className="w-auto h-[141px] lg:h-[169px] flex items-center text-primary-very-light-grey border rounded-[6px] shadow-myBoxShadow relative">
+      <div className="w-auto h-[141px] lg:h-[169px] flex items-center text-primary-very-light-grey border rounded-[10px] shadow-myBoxShadow relative">
         <div className="px-[20px] flex flex-col items-cente justify-center">
           {location != '' && 
             <p className={`${props.display} rounded-md text-[10px] text-white font-semibold py-[3px] px-[5px] right-2 top-2`}>Coming Soon!</p>

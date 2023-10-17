@@ -10,10 +10,13 @@ import ContactCard from "../components/ContactCard.jsx";
 
 const ViewAll = (props) => {
   return (
-    <Link to={props.routte} className="w-full flex justify-center sm:justify-start mt-[35px] mb-[15px] sm:mb-[29px]">
-        <button className="text-primary-red text-base font-semibold">
-          View all {props.vendorName}
-        </button>
+    <Link
+      to={props.routte}
+      className="w-full flex justify-center sm:justify-start mt-[35px] mb-[15px] sm:mb-[29px]"
+    >
+      <button className="text-primary-red text-base font-semibold">
+        View all {props.vendorName}
+      </button>
     </Link>
   );
 };
@@ -36,7 +39,7 @@ export default function Vendors() {
           <div className=" flex flex-col gap-[20px] sm:flex-row justify-between items-center">
             {ITEMS.map((item) => {
               if (item.id === 1) {
-                return <Products data={item} />;
+                return <Products data={item} key={item.id}/>;
               }
             })}
           </div>
@@ -44,7 +47,7 @@ export default function Vendors() {
 
           <div className="border-b w-full sm:hidden"></div>
         </div>
-          
+
         <div className="sm:w-[320px] sm:px-8 shadow-xl rounded-2xl">
           <div className="mt-[40px] sm:mt-0">
             <Vendor
@@ -56,15 +59,15 @@ export default function Vendors() {
           <div className="flex flex-col sm:flex-row justify-between items-center">
             {ITEMS.map((item) => {
               if (item.id === 4) {
-                return <Products data={item} />;
+                return <Products data={item} key={item.id}/>;
               }
             })}
           </div>
           <ViewAll routte="/chickRep" />
-          <div className="border-b w-full mt-[10px] sm:hidden"></div> 
+          <div className="border-b w-full mt-[10px] sm:hidden"></div>
         </div>
       </div>
-      
+
       <ContactCard></ContactCard>
     </div>
   );
