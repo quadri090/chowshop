@@ -84,7 +84,7 @@ export default function LogIn() {
             <span
               className="text-primary-red font-semibold"
               onClick={() => {
-                alert("Dang!!");
+                alert("Na you know wetin you dey find boss :)");
               }}
             >
               Sign Up

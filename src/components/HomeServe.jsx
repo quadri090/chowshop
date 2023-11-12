@@ -73,7 +73,7 @@ export default function HomeServe() {
         />
 
       </div>
-      <div className="mt-[30px] border-b-[3px] w-full"></div>
+      <div className="mt-[30px] border-b-4 border-white w-full"></div>
     </div>
   );
 }

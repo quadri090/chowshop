@@ -14,7 +14,7 @@ export default function Products(props) {
       </div>
       <div className="flex justify-between mt-[15px] text-[14px] sm:text-[16px] font-light">
         <p className=" text-primary-light-grey">{itemName}</p>
-        <p className="text-primary-red">#{price.toLocaleString("en-US")}</p>
+        <p className="text-primary-red font-bold">#{price.toLocaleString("en-US")}</p>
       </div>
       <div className="flex justify-between mt-[15px]">
         <button
@@ -26,8 +26,12 @@ export default function Products(props) {
       </div>
       <Link to="/Cart">
         {cartItemCount > 0 && (
-          <button className="fixed bottom-[20px] sm:bottom-[350px] left-auto sm:left-[20px] right-auto w-[320px] sm:w-[138px] text-[14px] sm:text-[16px] h-[50px] sm:h-[60px] font-semibold text-white bg-primary-red border-[1px] rounded-[6px]">
+          <button className="flex items-center justify-center gap-[10px] fixed bottom-[20px] sm:bottom-[350px] left-auto sm:left-[20px] right-auto w-[320px] sm:w-[138px] text-[14px] sm:text-[16px] h-[50px] sm:h-[60px] font-semibold text-white bg-primary-red border-[1px] rounded-[6px]">
             Show Cart
+            <i
+              className="fa fa-shopping-cart text-[24px]"
+              aria-hidden="true"
+            ></i>
           </button>
         )}
       </Link>

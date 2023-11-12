@@ -90,9 +90,9 @@ export default function Verification() {
           <p className="text-[12px] sm:text-[16px] lg:text-[20px] font-medium text-black ">
             Where are you?
           </p>
-          <div className="flex justify-between items-center w-full border-[1px] mt-[10px] shadow-xl rounded-[5px]">
+          <div className="flex justify-between items-center w-full border-[1px] mt-[10px] shadow-xl rounded-[5px] bg-white">
             <input
-              className="text-[13px] font-normal w-full h-[50px] lg:h-[60px] p-[10px] sm:text-base lg:text-[20px] outline-none"
+              className="text-[13px] font-normal w-full h-[50px] lg:h-[60px] mx-[10px] p-[5px] sm:text-base lg:text-[20px] outline-none"
               placeholder="Select your delivery address"
               value={location}
               onChange={(e) => e.currentTarget.value}
@@ -125,7 +125,7 @@ export default function Verification() {
         myProps="mt-[30px] lg:mt-[30px] w-full shadow-xl"
         head="More Info"
         type="text"
-        placeholder="Optional Info For Delivery Personnel"
+        placeholder="Additional Info For Delivery Man"
         inputprops="w-full"
       />
 

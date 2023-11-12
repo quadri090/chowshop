@@ -94,8 +94,8 @@ export default function Cart() {
         }`}
       />
       <Btn
-        routte="/Vendors"
-        text="Continue Shopping"
+        routte="/"
+        text="Go Home"
         myClasses={`mt-[37px] mb-[20px] lg:mt-[60px] ${
           totalAmount <= 0 ? "block" : "hidden"
         }`}

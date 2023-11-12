@@ -16,6 +16,7 @@ import ffColored from "../assets/fast-food-colored.svg";
 import hfColored from "../assets/healthy-food-colored.svg";
 import mtColored from "../assets/mai-thai-colored.svg";
 import fkColored from "../assets/fork-colored.svg";
+import TypeIt from "typeit-react";
 
 export default function HomeMenu() {
   const {
@@ -51,12 +52,18 @@ export default function HomeMenu() {
           className="mt-[31px] lg:mt-[80px]"
           onMouseLeave={() => addressInputClose()}
         >
-          <p className="text-[12px] sm:text-[16px] lg:text-[20px] font-medium text-black ">
-            Where are you?
-          </p>
-          <div className="flex justify-between items-center w-full border mt-[10px] shadow-xl rounded-[10px] bg-white">
+          <div className="text-[12px] sm:text-[16px] lg:text-[20px] font-bold text-black ">
+          <TypeIt
+                options={{
+                    strings: ["Where are you?"],
+                    speed: 50,
+                    waitUntilVisible: true,
+                }}
+            />
+          </div>
+          <div className={`flex justify-between items-center w-full border mt-[10px] shadow-xl rounded-[10px] ${location == "" ? 'bg-white' : 'bg-inherit'}`}>
             <input
-              className="text-[13px] font-normal w-full h-[50px] lg:h-[60px] p-[10px] sm:text-base lg:text-[20px]   outline-none"
+              className={`text-[13px] font-normal w-full h-[50px] lg:h-[60px] p-[5px] mx-[10px] sm:text-base lg:text-[20px] outline-none  ${location == "" ? 'bg-white' : 'bg-inherit'}`}
               placeholder="Select your delivery address"
               value={location}
               onChange={(e) => e.currentTarget.value}
@@ -101,13 +108,13 @@ export default function HomeMenu() {
               src={location !== "" ? hfColored : hf}
               head="Vegetables & Fruits"
               desc="May not want it, but good for you."
-              display="absolute bg-primary-green "
+              display="absolute bg-primary-red "
             />
             <Interests
               src={location !== "" ? mtColored : drinks}
               head="Drinks & Cocktails"
               desc="I feel sad for those who don't drink."
-              display="absolute bg-blue-500"
+              display="absolute bg-primary-red"
             />
             <Interests
               src={location !== "" ? fkColored : fork}
