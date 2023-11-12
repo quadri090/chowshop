@@ -8,6 +8,7 @@ import Locations from "../components/Locations.jsx";
 import { STREETS } from "../streets.js";
 import { useNavigate } from "react-router-dom";
 
+
 export default function Verification() {
   const [
     RegisteredAddress,
